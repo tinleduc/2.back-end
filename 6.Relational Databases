@@ -1,0 +1,337 @@
+SQLite voi Django
+
+Sử dụng python shell 
+>>> import SQLite3
+>>> SQLite.version
+>>> SQLite.SQLite_version
+
+* Home
+    self-contained 
+    serverless
+    zero-configuration
+    Transactional SQL Database engine
+
+* Overview - Installation
+
+Advanced of SQLite
+- does not require a separate server process or system to Operate
+- zero-configuration, which means no setup or administration needed
+- is stored in a single cross-plateform disk file
+- small and light weight less than 400KiB fully congigured or less than 250 KiB with optional features omitted.
+- Self-contained which means no external dependencies
+- Transactions are fully ACID- complaint allowing safe access from multiple processes or threads
+- Support most of the query language features founed in SQL92 standard
+- Avaible on UNIX and Window
+
+SQLite Limitation 
+unsupported features of SQL92:
+RIGHT OUTER JOIN.
+FULL OUTER JOIN
+ALTER Table
+Trigger Support
+Views
+GRANT AND REVOKE
+
+The standard SQLite Commands to Interact with relational databases are similar to SQL
+They are Create - Select- Insert- Update- Delete and Drop
+DDL - Data definition language
+Create
+Alter
+Drop
+DML - Data Manipulation language
+Insert
+Update
+Delete
+DQL - Data query language
+Select
+
+Installation
+ Download package from Download page.
+ Run Commands
+
+ tar xvfz $name-package
+ cd sqlite-autoconf-xxxxxx
+ ./ configure --prefix=user/local
+ make
+ make install
+
+* Commands
+Simple and useful Commands
+These Commands are called dot SQLite dot Commands and exception with these Commands is that they should not be terminated by a semi-colon
+Let's start'
+$sqlite3.
+sqlite>.help
+--> Listing of the avaiable dot commands 
+    - .backup ?DB? FILE
+    - .bail ON|OFF
+    - .databases
+    - .dump ?TABLE?
+    - .echo ON|OFF
+    - .exit
+    - .explain ON|OFF
+    - .header(s) ON|OFF
+    - .help
+    - .import FILE TABLE
+    - .indices ?TABLE?
+    - .load FILE ?ENTRY?
+    - log FILE|off
+    - .mode MODE
+    - .nullvalue STRING
+    - .output FILENAME
+    - .output stdout
+    - .print STRING
+    - .prompt MAIN CONTINUE
+    - .quit
+    - .read FILENAME
+    - .schema ?TABLE?
+    - .separator STRING
+    - .show
+        see default setting for your SQLite
+        sqlite>.show
+                echo: off
+            explain: off
+            headers: off
+                mode: column
+            nullvalue: ""
+            output: stdout
+            separator: "|"
+                width:
+    - .stats ON|OFF
+    - .tables ?PATTERN?
+    - .timeout MS
+    - .width NUM NUM
+    - .timer ON|OFF
+
+
+Formatting output
+
+.header ON
+.mode column
+.timer on
+
+sqlite> .schema sqlite.master
+
+        CREATE TABLE sqlite_master (
+        type text,
+        name text,
+        tbl_name text,
+        rootpage integer,
+        sql text
+        );
+
+
+* Syntax
+
+- unique set of rules and guidelines called Syntax
+
+* Case-sensitivity
+Which mean GLOB and glob having different meaning in SQLite statements
+
+* Comments
+
+- comments are extra notes which you can add in your code to inscrease its readability and they can appear anywhrere
+SQl comments begin with two consecutive "-" characters
+sqlite> .help -- this is a single line comment
+
+SQLite statements
+Start with any of keywords DDL, DML, DQL,.. and all the statements end with a semicolon;
+
+- SQLite Analyze statements
+
+ANALYZE;
+or 
+ANALYZE database_name;
+or
+ANALYZE database_name.table_name;
+
+- SQLite AND/OR clause
+- SQLite ALTER TABLE statement
+- SQLite ALTER TABLE statement (Rename)
+- SQLite  ATTACH DATABASE statement
+- SQLite BEGIN TRANSACTION statement
+- SQLite BETWEEN Clause
+- SQLite COMMIT statement
+- SQLite CREATE INDEX statement
+- SQLite CREATE UNIQUE INDEX statement
+- SQLite CREATE TABLE statement
+- SQLite CREATE TRIGGER statement
+- SQLite CREATE VIRTUAL TABLE statement
+- SQLite COMMIT TRANSACTION statement
+- SQLite COUNT Clause
+- SQLite DELETE statement
+- SQLite DETACH DATABASE statement
+- SQLite DISTINCT Clause
+- SQLite DROP TABLE statement
+- SQLite DROP INDEX statement
+- SQLite DROP VIEW statement
+- SQLite DROP TRIGGER statement
+- SQLite EXISTS Clause
+- SQLite EXPLAIN statement
+- SQLite GLOB Clause
+- SQLite HAVING Clause
+- SQLite INSERT INTO Clause
+- SQLite IN Clause
+- SQLite Like Clause
+- SQLite NOT IN Clause
+- SQLite ORDER BY Clause
+- SQLite PRAGMA statement
+- SQLite RELEASE SAVEPOINT statement
+- SQLite REINDEX statement
+- SQLite ROLLBACK statement
+- SQLite SAVEPOINT statement
+- SQLite SELECT statement
+- SQLite UPDATE statement
+- SQLite CACUUM statement
+- SQLite WHERE Clause
+
+* Data Type
+
+SQlite storage classes
+
+    - NULL
+    - INTERGER
+    - REAL
+    - TEXT
+    - BLOB
+
+ SQLite Affinity Type
+    - TEXT
+    - NUMERIC
+    - INTERGER
+    - REAL
+    - NONE
+
+SQlite Affinity and Type Names
+    - INTERGER ( )
+    - TEXT ()
+    - NONE ()
+    - REAL ()
+    - NUMERIC ()
+
+Boolean Datatype
+SQLite does not fave a separate Boolean storage class Instead Boolean values are stored as interger 0 and 1
+
+Date and Time Datatype 
+- TEXT
+- REAL 
+- INTERGER
+
+
+* Create Database
+
+sqlite3 command is used to create a new SQLite Database.
+Syntax:
+$sqlite3 database_name.db
+
+Verify databased was created using .databases command
+
+sqlite> .databases
+
+Quit: using .exit or .quit
+
+- The .dump command
+
+
+
+
+
+
+
+* ATTACH Database
+
+* Detach Database
+
+* Create Table
+
+* Drop Table
+
+* Insert query
+
+* Select query
+
+* Operators
+
+* Expressions
+
+* Where clause
+
+* And & or clause
+
+* Update query
+
+* Delete query
+
+* Like clause
+
+
+* Glob clause
+
+* limit clause
+
+* Order by clause
+
+* Group by clause
+
+* Having clause
+
+* Distinct Keywork
+
+Advanced SQLite
+
+* PRAGMA
+
+* Constraints
+
+
+* Joins
+
+* Unions
+
+* Null value
+
+* Alias
+
+* Trigger
+
+* Indexes
+
+* Indexed by clause
+
+* Alter Commands
+
+* Truncate
+
+* Views
+
+* Transactions
+
+* Subqueries
+
+* Autoincrement
+
+* Injection
+
+* Explain
+
+* Vaccum
+
+* Date & Time
+
+* Useful Functions
+
+SQLite Interfaces
+
+* SQLite C/C++
+
+* SQLite Java
+
+* SQLite PHP
+
+* SQLite Perl
+
+* SQLite Python
+
+
+
+
+
